@@ -1,0 +1,130 @@
+.orgulho {
+  position: relative;
+
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100svh;
+
+  overflow: hidden;
+
+  background: #000;
+}
+
+.orgulho-foto {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  animation: orgulhoFoto 0.5s ease;
+}
+
+.orgulho-overlay {
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.9) 0%,
+    rgba(0, 0, 0, 0.2) 55%,
+    rgba(0, 0, 0, 0.05) 100%
+  );
+}
+
+.orgulho-conteudo {
+  position: absolute;
+  z-index: 2;
+
+  left: 6vw;
+  right: 6vw;
+  bottom: 7vh;
+
+  color: white;
+}
+
+.orgulho-conteudo span {
+  display: block;
+
+  margin-bottom: 15px;
+
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.orgulho-conteudo p {
+  max-width: 700px;
+
+  font-size: clamp(2rem, 5vw, 4rem);
+  line-height: 1.03;
+  letter-spacing: -0.045em;
+
+  animation: orgulhoTexto 0.4s ease;
+}
+
+.orgulho-conteudo button {
+  margin-top: 25px;
+  padding: 0;
+
+  border: 0;
+
+  background: transparent;
+  color: rgba(255, 255, 255, 0.75);
+
+  font-size: 1rem;
+
+  cursor: pointer;
+}
+
+@keyframes orgulhoFoto {
+  from {
+    opacity: 0;
+    transform: scale(1.015);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes orgulhoTexto {
+  from {
+    opacity: 0;
+    transform: translateY(7px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 600px) {
+  .orgulho-conteudo {
+    left: 22px;
+    right: 22px;
+    bottom: 45px;
+  }
+
+  .orgulho-conteudo p {
+    font-size: 2.3rem;
+  }
+}
+
+.orgulho-conteudo small {
+  display: block;
+
+  margin-top: 13px;
+
+  font-size: 0.85rem;
+  font-weight: 400;
+
+  color: rgba(255, 255, 255, 0.6);
+
+  animation: orgulhoTexto 0.45s ease;
+}

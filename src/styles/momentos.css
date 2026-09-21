@@ -1,0 +1,242 @@
+.momentos {
+  min-height: 100vh;
+  min-height: 100svh;
+
+  padding: 70px 6vw 80px;
+
+  background: #f1ece5;
+  color: #181512;
+}
+
+
+/* TOPO */
+
+.momentos-topo {
+  margin-bottom: 45px;
+
+  animation: momentosTopo 0.6s ease both;
+}
+
+.momentos-topo > p {
+  margin-bottom: 10px;
+
+  font-size: 0.8rem;
+
+  opacity: 0.5;
+}
+
+.momentos-topo h1 {
+  font-size: clamp(3rem, 7vw, 6rem);
+  line-height: 0.9;
+
+  letter-spacing: -0.06em;
+  font-weight: 600;
+}
+
+
+/* FOTOS */
+
+.momentos-grid {
+  width: min(100%, 1050px);
+
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+
+  gap: 12px;
+
+  animation: momentosEntrada 0.7s 0.1s ease both;
+}
+
+.momento {
+  overflow: hidden;
+
+  border-radius: 5px;
+}
+
+.momento img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+
+/* TAMANHOS */
+
+.momento-1 {
+  grid-column: span 7;
+  height: 480px;
+}
+
+.momento-2 {
+  grid-column: span 5;
+  height: 480px;
+}
+
+.momento-3 {
+  grid-column: span 4;
+  height: 350px;
+}
+
+.momento-4 {
+  grid-column: span 8;
+  height: 350px;
+}
+
+.momento-5 {
+  grid-column: span 6;
+  height: 430px;
+}
+
+.momento-6 {
+  grid-column: span 6;
+  height: 430px;
+}
+
+.momento-7 {
+  grid-column: span 8;
+  height: 360px;
+}
+
+.momento-8 {
+  grid-column: span 4;
+  height: 360px;
+}
+
+.momento-9 {
+  grid-column: span 5;
+  height: 430px;
+}
+
+.momento-10 {
+  grid-column: span 7;
+  height: 430px;
+}
+
+
+/* FINAL */
+
+.momentos-final {
+  width: min(100%, 1050px);
+
+  margin: 65px auto 0;
+}
+
+.momentos-final p {
+  font-size: clamp(2rem, 5vw, 4rem);
+  line-height: 1;
+
+  letter-spacing: -0.05em;
+}
+
+.momentos-final button {
+  margin-top: 28px;
+  padding: 0;
+
+  border: 0;
+
+  background: transparent;
+  color: #181512;
+
+  font-size: 0.85rem;
+
+  cursor: pointer;
+
+  opacity: 0.55;
+
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+.momentos-final button:hover {
+  opacity: 0.8;
+
+  transform: translateX(3px);
+}
+
+
+/* ANIMAÇÕES */
+
+@keyframes momentosTopo {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes momentosEntrada {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* CELULAR */
+
+@media (max-width: 600px) {
+  .momentos {
+    padding: 50px 16px 60px;
+  }
+
+  .momentos-topo {
+    padding: 0 6px;
+
+    margin-bottom: 35px;
+  }
+
+  .momentos-topo h1 {
+    font-size: 2.8rem;
+  }
+
+  .momentos-grid {
+    grid-template-columns: 1fr 1fr;
+
+    gap: 7px;
+  }
+
+  .momento-1,
+  .momento-4,
+  .momento-7,
+  .momento-10 {
+    grid-column: 1 / 3;
+
+    height: 360px;
+  }
+
+  .momento-2,
+  .momento-3,
+  .momento-5,
+  .momento-6,
+  .momento-8,
+  .momento-9 {
+    grid-column: span 1;
+
+    height: 250px;
+  }
+
+  .momentos-final {
+    margin-top: 50px;
+
+    padding: 0 6px;
+  }
+
+  .momentos-final p {
+    font-size: 2.5rem;
+  }
+}

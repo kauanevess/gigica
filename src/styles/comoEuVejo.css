@@ -1,0 +1,116 @@
+.como-eu-vejo {
+  position: relative;
+
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100svh;
+
+  overflow: hidden;
+
+  background: #000;
+}
+
+.como-eu-vejo-video {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center;
+
+  border: 0;
+}
+
+.como-eu-vejo-overlay {
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.9) 0%,
+      rgba(0, 0, 0, 0.35) 45%,
+      rgba(0, 0, 0, 0.08) 75%
+    );
+}
+
+.como-eu-vejo-conteudo {
+  position: absolute;
+  z-index: 2;
+
+  left: 6vw;
+  right: 6vw;
+  bottom: 8vh;
+
+  color: white;
+}
+
+.como-eu-vejo-mini {
+  margin-bottom: 14px;
+
+  font-size: 0.78rem;
+
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.como-eu-vejo-frase {
+  max-width: 650px;
+  min-height: 110px;
+
+  font-size: clamp(2rem, 5vw, 4rem);
+  line-height: 1.03;
+  letter-spacing: -0.045em;
+
+  animation: fraseEntrando 0.45s ease;
+}
+
+.como-eu-vejo-conteudo button {
+  margin-top: 18px;
+  padding: 0;
+
+  border: 0;
+  background: transparent;
+
+  color: rgba(255, 255, 255, 0.7);
+
+  font-size: 0.8rem;
+  cursor: pointer;
+
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+.como-eu-vejo-conteudo button:active {
+  transform: translateX(3px);
+}
+
+@keyframes fraseEntrando {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 600px) {
+  .como-eu-vejo-conteudo {
+    left: 22px;
+    right: 22px;
+    bottom: 45px;
+  }
+
+  .como-eu-vejo-frase {
+    max-width: 340px;
+    min-height: 105px;
+
+    font-size: 2.2rem;
+    line-height: 1.02;
+  }
+}

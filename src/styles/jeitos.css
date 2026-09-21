@@ -1,0 +1,215 @@
+.jeitos {
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100svh;
+
+  padding: 65px 0 50px;
+
+  overflow: hidden;
+
+  background: #171412;
+  color: #f4f0eb;
+}
+
+.jeitos-topo {
+  padding: 0 6vw;
+  margin-bottom: 45px;
+
+  animation: jeitosTopo 0.6s ease both;
+}
+
+.jeitos-topo > p:first-child {
+  margin-bottom: 10px;
+
+  font-size: 0.8rem;
+
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.jeitos-topo h1 {
+  max-width: 750px;
+
+  font-size: clamp(3rem, 7vw, 6rem);
+  line-height: 0.9;
+
+  letter-spacing: -0.06em;
+  font-weight: 600;
+}
+
+.jeitos-sub {
+  margin-top: 18px;
+
+  font-size: 0.95rem;
+
+  color: rgba(255, 255, 255, 0.55);
+}
+
+
+/* CARROSSEL */
+
+.carrossel {
+  display: flex;
+
+  gap: 12px;
+
+  padding: 0 6vw 15px;
+
+  overflow-x: auto;
+
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+
+  scrollbar-width: none;
+
+  animation: jeitosFotos 0.7s 0.08s ease both;
+}
+
+.carrossel::-webkit-scrollbar {
+  display: none;
+}
+
+.card-jeito {
+  position: relative;
+
+  flex: 0 0 min(350px, 75vw);
+
+  height: 510px;
+
+  overflow: hidden;
+
+  border-radius: 5px;
+
+  scroll-snap-align: center;
+}
+
+.card-jeito img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transition: transform 0.35s ease;
+}
+
+.card-jeito:active img {
+  transform: scale(0.985);
+}
+
+.card-jeito span {
+  position: absolute;
+
+  right: 12px;
+  bottom: 10px;
+
+  font-size: 0.65rem;
+
+  color: rgba(255, 255, 255, 0.7);
+}
+
+
+/* RODAPÉ */
+
+.jeitos-rodape {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 12px 6vw 0;
+}
+
+.jeitos-rodape p {
+  font-size: 0.7rem;
+
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.jeitos-rodape button {
+  padding: 0;
+
+  border: 0;
+
+  background: transparent;
+  color: rgba(255, 255, 255, 0.7);
+
+  font-size: 0.85rem;
+
+  cursor: pointer;
+
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+.jeitos-rodape button:hover {
+  transform: translateX(3px);
+}
+
+
+/* ANIMAÇÕES */
+
+@keyframes jeitosTopo {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes jeitosFotos {
+  from {
+    opacity: 0;
+    transform: translateX(15px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
+/* CELULAR */
+
+@media (max-width: 600px) {
+  .jeitos {
+    padding: 48px 0 38px;
+  }
+
+  .jeitos-topo {
+    padding: 0 22px;
+    margin-bottom: 32px;
+  }
+
+  .jeitos-topo h1 {
+    font-size: 2.8rem;
+  }
+
+  .jeitos-sub {
+    max-width: 300px;
+
+    font-size: 0.88rem;
+    line-height: 1.4;
+  }
+
+  .carrossel {
+    padding: 0 22px 12px;
+
+    gap: 9px;
+  }
+
+  .card-jeito {
+    flex-basis: 78vw;
+
+    height: 52vh;
+    min-height: 400px;
+    max-height: 480px;
+  }
+
+  .jeitos-rodape {
+    padding: 12px 22px 0;
+  }
+}

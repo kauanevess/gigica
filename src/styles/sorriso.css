@@ -1,0 +1,132 @@
+.sorriso {
+  width: 100%;
+  min-height: 100vh;
+  background: #000;
+}
+
+.foto-container {
+  position: relative;
+
+  width: 100%;
+  height: 100vh;
+  height: 100svh;
+
+  overflow: hidden;
+  background: #000;
+}
+
+.foto-sorriso {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  animation: trocaFoto 0.7s ease both;
+}
+
+.sorriso-overlay {
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.82) 0%,
+    rgba(0, 0, 0, 0.28) 32%,
+    rgba(0, 0, 0, 0.03) 62%
+  );
+}
+
+.sorriso-conteudo {
+  position: absolute;
+  z-index: 2;
+
+  left: 6vw;
+  right: 6vw;
+  bottom: 7vh;
+
+  color: white;
+
+  animation: trocaTexto 0.55s ease both;
+}
+
+.sorriso-pequeno {
+  margin-bottom: 8px;
+
+  font-size: 0.85rem;
+
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.titulo-sorriso {
+  font-size: clamp(3rem, 8vw, 6.5rem);
+  line-height: 0.95;
+
+  letter-spacing: -0.055em;
+  font-weight: 600;
+}
+
+.frase-sorriso {
+  max-width: 600px;
+
+  font-size: clamp(2.3rem, 6vw, 4.5rem);
+  line-height: 1;
+
+  letter-spacing: -0.05em;
+  font-weight: 600;
+}
+
+.sorriso-conteudo button {
+  margin-top: 25px;
+  padding: 0;
+
+  border: 0;
+
+  background: transparent;
+  color: rgba(255, 255, 255, 0.65);
+
+  font-size: 0.8rem;
+
+  cursor: pointer;
+}
+
+@keyframes trocaFoto {
+  from {
+    opacity: 0;
+    transform: scale(1.025);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes trocaTexto {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 600px) {
+  .sorriso-conteudo {
+    left: 22px;
+    right: 22px;
+    bottom: 43px;
+  }
+
+  .titulo-sorriso {
+    font-size: 2.9rem;
+  }
+
+  .frase-sorriso {
+    max-width: 330px;
+
+    font-size: 2.45rem;
+  }
+}
